@@ -1,0 +1,20 @@
+{
+  "name": "recipe-sharing",
+  "version": "1.0.0",
+  "description": "A recipe sharing application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npduval/Recipe-Sharing.git"
+  },
+  "author": "Hunter Zandri, Rob Agusta, Nick Duval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npduval/Recipe-Sharing/issues"
+  },
+  "homepage": "https://github.com/npduval/Recipe-Sharing#readme"
+}
