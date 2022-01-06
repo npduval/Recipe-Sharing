@@ -14,7 +14,7 @@ CREATE TABLE ingredients (
     ingredient_id INT(10) PRIMARY KEY AUTO_INCREMENT,
     ingredient VARCHAR(50) NOT NULL,
     label VARCHAR(50) NOT NULL,
-    sort INT(10) NOT NULL,
+    amount INT(10) NOT NULL,
     PRIMARY KEY (ingredient_id)
 )
 
@@ -32,4 +32,12 @@ CREATE TABLE recipe_ingredients (
     amount DECIMAL (4,2) NOT NULL,
     sort INT(10) NOT NULL, 
     PRIMARY KEY (recipe_ingredients_id)
+)
+
+CREATE TABLE users (
+    users_id INT(100000) PRIMARY KEY AUTO_INCREMENT,
+    name_id VARCHAR(100) NOT NULL,
+    email_address VARCHAR(50) NOT NULL,
+    password_hash VARCHAR (50) NOT NULL,
+    PRIMARY KEY(users_id)
 );
