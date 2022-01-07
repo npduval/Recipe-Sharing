@@ -1,6 +1,21 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Recipe } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+router.get('/', async (req, res) => {
+ try {
+   const allRecipes = await Recipe.findAll();
+   console.log(allRecipes);
+   res.json(allRecipes);
+ } catch (error) {
+   
+ }
+  
+});
+
+
+
+
 
 router.post('/', withAuth, async (req, res) => {
   try {

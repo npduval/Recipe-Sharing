@@ -4,40 +4,28 @@ CREATE DATABASE recipe_db;
 USE recipe_db;
 
 CREATE TABLE recipe (
-    recipe_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    recipe_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
-    PRIMARY KEY (recipe_id)
-)
+    description TEXT 
+);
 
 CREATE TABLE ingredients (
-    ingredient_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    ingredient_id INT PRIMARY KEY AUTO_INCREMENT,
     ingredient VARCHAR(50) NOT NULL,
     label VARCHAR(50) NOT NULL,
-    amount INT(10) NOT NULL,
-    PRIMARY KEY (ingredient_id)
-)
+    sort INT NOT NULL
+);
 
 CREATE TABLE instructions (
-    instructions_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-    instructions TEXT NOT NULL,
-    PRIMARY KEY (instructions_id)
-)
-
-CREATE TABLE recipe_ingredients (
-    recipe_ingredients_id INT(10) NOT NULL AUTO_INCREMENT,
-    CONSTRAINT fk_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id),
-    CONSTRAINT fk_ingredient FOREIGN KEY (ingredient_id) REFERENCES ingredients(ingredient_id),
-    CONSTRAINT fk_instructions FOREIGN KEY (instructions_id) REFERENCES instructions(instructions_id),
-    amount DECIMAL (4,2) NOT NULL,
-    sort INT(10) NOT NULL, 
-    PRIMARY KEY (recipe_ingredients_id)
-)
-
-CREATE TABLE users (
-    users_id INT(100000) PRIMARY KEY AUTO_INCREMENT,
-    name_id VARCHAR(100) NOT NULL,
-    email_address VARCHAR(50) NOT NULL,
-    password_hash VARCHAR (50) NOT NULL,
-    PRIMARY KEY(users_id)
+    instructions_id INT PRIMARY KEY AUTO_INCREMENT,
+    instructions TEXT NOT NULL
 );
+
+-- CREATE TABLE recipe_ingredients (
+--     recipe_ingredients_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+--     CONSTRAINT fk_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id),
+--     CONSTRAINT fk_ingredient FOREIGN KEY (ingredient_id) REFERENCES ingredients(ingredient_id),
+--     CONSTRAINT fk_instructions FOREIGN KEY (instructions_id) REFERENCES instructions(instructions_id),
+--     amount DECIMAL (4,2) NOT NULL,
+--     sort INT NOT NULL
+-- );
