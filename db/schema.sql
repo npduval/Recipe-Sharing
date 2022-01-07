@@ -11,9 +11,7 @@ CREATE TABLE recipe (
 
 CREATE TABLE ingredients (
     ingredient_id INT PRIMARY KEY AUTO_INCREMENT,
-    ingredient VARCHAR(50) NOT NULL,
-    label VARCHAR(50) NOT NULL,
-    sort INT NOT NULL
+    ingredient VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE instructions (
