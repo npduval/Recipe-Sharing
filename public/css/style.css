@@ -96,6 +96,7 @@ img {
 @supports (scroll-snap-type) {
   .slider > a {
     display: none;
+    margin-top: 10px;
   }
 }
 
@@ -127,7 +128,7 @@ html, body {
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
   padding-top: 60px;
-}
+};
 
 /* Modal Content/Box */
 .modal-content {
