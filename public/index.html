@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+    <title>StudMuffins Recipe Share Website</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>StudMuffins</h1>
+            <!-- Button to open the modal login form -->
+<button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<input type="text" id="searchbox" placeholder="Search...">
+        </div>
+        <div class="main">   
+            <div class="slider">
+                <a href="#slide-1">1</a>
+                <a href="#slide-2">2</a>
+                <a href="#slide-3">3</a>
+                <a href="#slide-4">4</a>
+                <a href="#slide-5">5</a>
+                <div class="slides">
+                    <div id="slide-1"><img src="./foodpics/Apple Crisp.jpg"></div>
+                    <div id="slide-2"><img src="./foodpics/Apple Sauce.jpg"></div>
+                    <div id="slide-3"><img src="./foodpics/Chicken Pineapple Quesadilla.jpg"></div>
+                    <div id="slide-4">><img src="./foodpics/Chocolate Chocolate Chip Cookies.jpg"></div>
+                    <div id="slide-5"><img src="./foodpics/Crispy Curry Chicken.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./js/script.js"
+</html>
