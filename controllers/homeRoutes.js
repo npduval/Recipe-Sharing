@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe, User } = require('../models');
+const { Recipe, User, Ingredients, Instructions } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -8,8 +8,12 @@ router.get('/', async (req, res) => {
     const recipeData = await Recipe.findAll({
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Ingredients,
+          attributes: ['ingredients'],
+        },
+        {
+          model: Instructions,
+          attributes: ['instructions'],
         },
       ],
     });

@@ -11,21 +11,16 @@ CREATE TABLE recipe (
 
 CREATE TABLE ingredients (
     ingredient_id INT PRIMARY KEY AUTO_INCREMENT,
-    ingredient VARCHAR(50) NOT NULL,
-    label VARCHAR(50) NOT NULL,
-    sort INT NOT NULL
+    ingredient TEXT NOT NULL,
+    recipe_id INT NOT NULL,
+    FOREIGN KEY (recipe_id)
+    REFERENCES recipe(recipe_id)
 );
 
 CREATE TABLE instructions (
     instructions_id INT PRIMARY KEY AUTO_INCREMENT,
-    instructions TEXT NOT NULL
+    instructions TEXT NOT NULL,
+    recipe_id INT NOT NULL,
+    FOREIGN KEY (recipe_id)
+    REFERENCES recipe(recipe_id)
 );
-
--- CREATE TABLE recipe_ingredients (
---     recipe_ingredients_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
---     CONSTRAINT fk_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id),
---     CONSTRAINT fk_ingredient FOREIGN KEY (ingredient_id) REFERENCES ingredients(ingredient_id),
---     CONSTRAINT fk_instructions FOREIGN KEY (instructions_id) REFERENCES instructions(instructions_id),
---     amount DECIMAL (4,2) NOT NULL,
---     sort INT NOT NULL
--- );

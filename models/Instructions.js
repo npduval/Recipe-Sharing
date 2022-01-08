@@ -1,16 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Instructions extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Instructions extends Model {}
 
 Instructions.init(
   {
-    id: {
+    instructions_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -20,6 +15,14 @@ Instructions.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'recipe_id',
+      }
+  }
   },
   {
     sequelize,
