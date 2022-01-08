@@ -1,15 +1,23 @@
-//biolerplate file
-
-const User = require('./User');
 const Recipe = require('./Recipe');
+const Ingredients = require('./Ingredients');
+const Instructions = require('./Instructions');
 
-// User.hasMany(Recipe, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+Recipe.hasOne(Ingredients, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE',
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Ingredients.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+});
 
-module.exports = { User, Recipe };
+Recipe.hasOne(Instructions, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE',
+});
+
+Instructions.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+});
+
+module.exports = { Recipe, Ingredients, Instructions };
