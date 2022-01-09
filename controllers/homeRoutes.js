@@ -7,6 +7,11 @@ router.get('/', async (req, res) => {
     });
 
 
+router.get('/login', (req, res) => {
+
+  res.render('login');
+});
+
 // router.get('/recipe/:id', async (req, res) => {
 //   try {
 //     const recipeData = await Recipe.findByPk(req.params.id, {
