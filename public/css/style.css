@@ -96,6 +96,7 @@ img {
 @supports (scroll-snap-type) {
   .slider > a {
     display: none;
+    margin-top: 10px;
   }
 }
 
