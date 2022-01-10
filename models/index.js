@@ -1,6 +1,7 @@
 const Recipe = require('./Recipe');
 const Ingredients = require('./Ingredients');
 const Instructions = require('./Instructions');
+const User = require('./User');
 
 Recipe.hasOne(Ingredients, {
     foreignKey: 'recipe_id',
@@ -20,4 +21,4 @@ Instructions.belongsTo(Recipe, {
     foreignKey: 'recipe_id'
 });
 
-module.exports = { Recipe, Ingredients, Instructions };
+module.exports = { Recipe, Ingredients, Instructions, User };
