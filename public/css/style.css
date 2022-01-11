@@ -109,7 +109,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 /*This is Autocomplete*/
@@ -226,4 +226,9 @@ font-weight: bold;
     font-size: large;
     text-align: center;
     margin-top: 100px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 350px;
 }
