@@ -62,15 +62,19 @@ router.get('/search', (req, res) => {
 router.get('/profile', async (req, res) => {
   try {
     const allRecipes = await Recipe.findAll();
-    console.log(allRecipes);
-    
 
     const recipes = allRecipes.map((recipe) => recipe.get({ plain: true }));
 
+    const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+          });
+    
+    const user = userData.get({ plain: true })
+
 
     res.render('recipes', { 
-      recipes, 
-      logged_in: req.session.logged_in 
+      recipes,
+      user
     });
   } catch (error) {
     res.status(500).json(err);
