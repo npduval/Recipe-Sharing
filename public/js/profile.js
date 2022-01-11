@@ -1,23 +1,23 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+    const name = document.querySelector('#recipe-name').value.trim();
+    const instructions = document.querySelector('#recipe-desc').value.trim();
+    const description = document.querySelector('#recipe-inst').value.trim();
   
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
+    if (name && instructions && description) {
+      const response = await fetch(`/api/recipes`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ name, instructions, description }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+       document.location.replace('/profile');
       } else {
-        alert('Failed to create project');
+        alert('Failed to create recipe');
       }
     }
   };

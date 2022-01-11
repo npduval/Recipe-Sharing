@@ -17,27 +17,7 @@ router.get('/search', (req, res) => {
 
   res.render('recipes');
 });
-// router.get('/recipe/:id', async (req, res) => {
-//   try {
-//     const recipeData = await Recipe.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
 
-//     const recipes = recipeData.get({ plain: true });
-
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
@@ -62,15 +42,19 @@ router.get('/search', (req, res) => {
 router.get('/profile', async (req, res) => {
   try {
     const allRecipes = await Recipe.findAll();
-    console.log(allRecipes);
-    
 
     const recipes = allRecipes.map((recipe) => recipe.get({ plain: true }));
 
+    const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+          });
+    
+    const user = userData.get({ plain: true })
+
 
     res.render('recipes', { 
-      recipes, 
-      logged_in: req.session.logged_in 
+      ...recipes,
+      ...user
     });
   } catch (error) {
     res.status(500).json(err);
@@ -78,14 +62,29 @@ router.get('/profile', async (req, res) => {
    
  });
 
-// router.get('/login', (req, res) => {
-//   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
+ router.get('/recipes/:id', async (req, res) => {
+  try {
+    
+    const indRecipeData = await Recipe.findByPk(req.params.id, {
 
-//   res.render('login');
-// });
+      include: [
+        {
+          model: Ingredients,
+          attributes: ['ingredient'],
+        },
+      ],
+    
+    });
+
+    const recipe = indRecipeData.get({ plain: true });
+
+    res.render('search', {
+      ...recipe,
+  
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
  module.exports = router;

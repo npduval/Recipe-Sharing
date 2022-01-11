@@ -1,7 +1,7 @@
 
   <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome to StudMuffin &#129473;</h2>
   </div>
 </div>
 <div class="row mt-4">
@@ -10,20 +10,20 @@
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">Recipe name: </label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="recipe-name">Recipe name: </label>
+        <input class="form-input"  id="recipe-name" name="recipe-name" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="recipe-desc">Description:</label>
+        <textarea class="form-input"  id="recipe-desc" name="recipe-desc"></textarea>
       </div>
       <div class="form-group">
-        <label for="project-desc">ingredients:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="recipe-desc">Ingredients:</label>
+        <textarea class="form-input"  id="recipe-inst" name="recipe-desc"></textarea>
       </div>
       <div class="form-group">
-        <label for="project-desc">instructions:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="recipe-desc">Instructions:</label>
+        <textarea class="form-input"  id="recipe-desc" name="recipe-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -31,17 +31,17 @@
     </form>
   </div>
 
-  {{#if allRecipe.length}}
-  <div class="col-md-6 project-list">
+  {{#if recipes.length}}
+  <div class="col-md-6 recipe-list">
     <h3>Available Recipes:</h3>
 
-    {{#each recipe as |recipe|}}
+    {{#each recipes as |recipe|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{recipe.name}}</a></h4>
+        <h4><a href="/recipes/{{recipe.recipe_id}}">{{recipe.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{recipe.recipe_id}}">EDIT</button>
       </div>
     </div>
     {{/each}}
