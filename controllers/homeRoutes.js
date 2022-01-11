@@ -12,6 +12,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+router.get('/search', (req, res) => {
+
+  res.render('recipes');
+});
 // router.get('/recipe/:id', async (req, res) => {
 //   try {
 //     const recipeData = await Recipe.findByPk(req.params.id, {

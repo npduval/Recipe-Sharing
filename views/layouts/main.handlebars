@@ -13,12 +13,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-font">
               <li class="nav-item">
@@ -40,18 +36,18 @@
                 </ul>
               </li>
             </ul>
-            <p id="logo" style="font-size:50px;">&#129473; StudMuffin</p>
+            <p id="logo" style="font-size:40px;">&#129473; StudMuffin</p>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" id="search" placeholder="Search" onkeyup="javascript:load_data(this.value)" aria-label="Search">
+              <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
               <span id="search_result"></span>
-              <button class="btn btn-outline-success" style="margin: 5px;" type="submit">Search</button>
+              <button class="btn btn-outline-success" style="margin: 5px;" id="search-button" type="submit">Search</button>
               <a class="btn btn-outline-success" style="margin: 5px;" href='/login'>Login</a>
             </form>
           </div>
     </div>
   </nav>
 <!-- END OF NAVBAR -->
-    <main>
+    <main class="container container-fluid mt-5">
       {{{ body }}}
     </main>
     <footer>
@@ -60,6 +56,8 @@
     </footer>
   </div>
 
+
+  <script src="/js/search.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
