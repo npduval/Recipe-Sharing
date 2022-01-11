@@ -53,8 +53,8 @@ router.get('/profile', async (req, res) => {
 
 
     res.render('recipes', { 
-      ...recipes,
-      ...user
+      recipes,
+      user
     });
   } catch (error) {
     res.status(500).json(err);
@@ -79,7 +79,7 @@ router.get('/profile', async (req, res) => {
     const recipe = indRecipeData.get({ plain: true });
 
     res.render('search', {
-      ...recipe,
+      recipe,
   
     });
   } catch (err) {
