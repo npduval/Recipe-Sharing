@@ -72,11 +72,17 @@ router.get('/profile', async (req, res) => {
           model: Ingredients,
           attributes: ['ingredient'],
         },
+        {
+          model: Instructions,
+          attributes: ['instructions'],
+        },
       ],
     
     });
 
     const recipe = indRecipeData.get({ plain: true });
+
+    console.log(recipe)
 
     res.render('search', {
       recipe,
