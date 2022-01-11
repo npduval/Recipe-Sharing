@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Recipe } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { Op } = require("sequelize");
 
 router.get('/', async (req, res) => {
  try {
@@ -37,21 +38,19 @@ router.post('/',  async (req, res) => {
 
 
 
-router.get('/search', async (req, res) => {
+router.post('/search', async (req, res) => {
   try {
     const likeRecipes = await Recipe.findAll({
       where : {
-        name : { [Op.like]: '% + req.body + %'}
+        name : { [Op.like]: `%${req.body.search}%` }
     }
     });
 
     const recipes = likeRecipes.map((recipe) => recipe.get({ plain: true }));
 
-
-    res.render('search', { 
-      recipes,
-    });
-  } catch (error) {
+  res.json(recipes);
+  
+  } catch (err) {
     res.status(500).json(err);
   }
    
