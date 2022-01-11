@@ -1,10 +1,13 @@
-    <div class="container mb-5">
+    <div class="container mt-5">
       <br>
-      <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src={{description}} alt="">
+      <div class="card" style="width: 100%;">
+  {{!-- <img class="card-img-top" src={{description}} alt=""> --}}
   <div class="card-body">
-    <h5 class="card-title">{{recipe.name}}</h5>
+    <h4 class="card-title">{{recipe.name}}</h4>
     <p class="card-text">{{recipe.description}}</p>
-    <p class="card-text">{{recipe.instructions}}</p>
+    <h5>Ingredients</h5>
+    <p class="card-text">{{recipe.ingredient.ingredient}}</p>
+    <h5>Instructions</h5>
+    <p class="card-text">{{recipe.instruction.instructions}}</p>
   </div>
 </div>

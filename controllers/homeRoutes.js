@@ -53,8 +53,8 @@ router.get('/profile', async (req, res) => {
 
 
     res.render('recipes', { 
-      ...recipes,
-      ...user
+      recipes,
+      user
     });
   } catch (error) {
     res.status(500).json(err);
@@ -72,14 +72,20 @@ router.get('/profile', async (req, res) => {
           model: Ingredients,
           attributes: ['ingredient'],
         },
+        {
+          model: Instructions,
+          attributes: ['instructions'],
+        },
       ],
     
     });
 
     const recipe = indRecipeData.get({ plain: true });
 
+    console.log(recipe)
+
     res.render('search', {
-      ...recipe,
+      recipe,
   
     });
   } catch (err) {
