@@ -5,7 +5,7 @@
 const searchfunction= async (event) =>{
 
 const search = document.getElementById("search").value.trim();
-const container = document.getElementById("container");
+const container = document.querySelector(".container");
 
 event.preventDefault();
 
@@ -26,8 +26,7 @@ if (search) {
   data.forEach(element => {
     const li = document.createElement('li');
 
-    li.textContent = element.name;
-
+    li.textContent = element.name + ":" + element.description + ". "
     ul.appendChild(li);
   });
 
