@@ -13,11 +13,6 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/search', (req, res) => {
-
-  res.render('recipes');
-});
-
 
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
