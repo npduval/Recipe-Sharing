@@ -19,7 +19,7 @@ I also want to share my own recipes so others can make delicious meals for their
 
 ## Breakdown of Tasks
 
-Nick - Server side/Api routes 
+Nick - Server side/API Routes, Frontend
 
 Rob - Database, Frontend
 
