@@ -20,20 +20,19 @@ I also want to share my own recipes so others can make delicious meals for their
 
 ## Breakdown of Tasks
 
-Nick- Server side/Api routes 
+Nick - Server side/Api routes 
 
-Rob- database, frontend
+Rob - database, frontend
 
-Hunter-frontend 
+Hunter- Frontend 
 
 
 ### Tables
 users
 recipes 
 ingredients
-recipe_ingr_link
-steps
-saved_recipes
+instructions
+
 
 #### User
 - ID
