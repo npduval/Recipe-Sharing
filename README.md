@@ -39,4 +39,7 @@ Deployed Application : https://recipe-sharing22.herokuapp.com/
 
 Link to Github Repo : https://github.com/npduval/Recipe-Sharing
 
-![Uploading image.png…]()
+
+![RecipeSharing](https://user-images.githubusercontent.com/87501948/149444826-81897b23-05ef-49bf-b980-b5096297063b.PNG)
+
+
