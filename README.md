@@ -7,7 +7,6 @@ Rob
 Hunter
 
 
-
 ## Project Description
 
 The purpose of this application is to create a website where all cooking enthusiast can go to find recipes that'll make their tastebuds jump and drinks that'll do the same. This application allows users to make thier own profile which they can use to view recipes from our personal database and it allows them to add their own to share with everyone.
@@ -22,7 +21,7 @@ I also want to share my own recipes so others can make delicious meals for their
 
 Nick - Server side/Api routes 
 
-Rob - database, frontend
+Rob - Database, Frontend
 
 Hunter- Frontend 
 
@@ -32,15 +31,6 @@ users
 recipes 
 ingredients
 instructions
-
-
-#### User
-- ID
-- Password
-- Name
-
-
-
 
 
 
