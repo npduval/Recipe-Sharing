@@ -46,8 +46,8 @@ saved_recipes
 
 
 ## Link to project
-[Link to Deployed Application]()
+Deployed Application : https://recipe-sharing22.herokuapp.com/
 
-[Link to Github Repo](https://github.com/npduval/Recipe-Sharing)
+Link to Github Repo : https://github.com/npduval/Recipe-Sharing
 
-![Screenshot]()
+![Uploading image.png…]()
